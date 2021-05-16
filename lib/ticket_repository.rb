@@ -1,4 +1,4 @@
-require 'ticket'
+require_relative 'ticket'
 
 class TicketRepository
 
