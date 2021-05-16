@@ -15,7 +15,7 @@ class TicketRepository
   private
 
   def load_tickets
-    ticket_data.each do |ticket|
+    @ticket_data.each do |ticket|
       ticket_hash = {}
       ticket_hash[:id] = ticket["id"]
       ticket_hash[:status] = ticket["status"]
