@@ -13,6 +13,10 @@ class TicketRepository
     @tickets
   end
 
+  def find(app_ticket_id)
+    @tickets.find { |ticket| ticket.app_ticket_id == app_ticket_id }
+  end
+
   private
 
   def load_tickets
