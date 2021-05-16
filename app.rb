@@ -26,8 +26,13 @@ username = gets.chomp
 print "Password: "
 password = gets.chomp
 
-if authenticate(username, password)
-  puts "true"
+response = authenticate(username, password)
+
+if response
+  ticket_repository = TicketRepository.new(response)
+  tickets_controller = TicketsController.new(ticket_repository)
+  router = Router.new(tickets_controller)
+  router.run
 else
   puts "false"
 end

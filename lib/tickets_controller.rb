@@ -1,6 +1,6 @@
 require_relative 'tickets_view'
 
-class TicketController
+class TicketsController
   def initialize(ticket_repository)
     @ticket_repository = ticket_repository
     @tickets_view = TicketsView.new
