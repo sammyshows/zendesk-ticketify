@@ -1,4 +1,4 @@
-require_relative 'ticket_view'
+require_relative 'tickets_view'
 
 class TicketController
   def initialize(ticket_repository)
@@ -12,8 +12,8 @@ class TicketController
   end
 
   def show
-    app_ticket_id = @tickets_view.request_ticket_id
-    ticket = @ticket_repository.find(app_ticket_id)
+    ticket_index = @tickets_view.request_ticket_id - 1
+    ticket = @ticket_repository.all[ticket_index]
     @tickets_view.display_one(ticket)
   end
 end
