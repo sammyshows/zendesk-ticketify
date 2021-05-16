@@ -1,3 +1,5 @@
+require 'ticket'
+
 class TicketRepository
 
   def initialize(ticket_data)
@@ -5,6 +7,10 @@ class TicketRepository
     @tickets = []
     @app_ticket_id = 1
     load_tickets
+  end
+
+  def all
+    @tickets
   end
 
   private
