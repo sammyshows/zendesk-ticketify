@@ -18,14 +18,16 @@ class Router
   def route_user_action
     print_actions
     choice = gets.chomp.to_i
-    # print `clear`
+    print `clear`
     route_action(choice)
   end
 
   def print_actions
+    puts ""
     puts " ----------------------------"
     puts "| What would you like to do? |"
     puts " ----------------------------"
+    puts ""
     puts "1. View all tickets"
     puts "2. View a ticket"
     puts "8. Exit"

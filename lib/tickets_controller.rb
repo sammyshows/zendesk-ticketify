@@ -1,5 +1,5 @@
 require_relative 'tickets_view'
-
+require 'byebug'
 class TicketsController
   def initialize(ticket_repository)
     @ticket_repository = ticket_repository
@@ -14,6 +14,6 @@ class TicketsController
   def show
     ticket_index = @tickets_view.request_ticket_id - 1
     ticket = @ticket_repository.all[ticket_index]
-    @tickets_view.display_one(ticket)
+    @tickets_view.display_one(ticket, ticket_index)
   end
 end

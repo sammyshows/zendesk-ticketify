@@ -24,6 +24,9 @@ class TicketRepository
       ticket_hash[:description] = ticket["description"]
       ticket_hash[:due_at] = ticket["due_at"]
       ticket_hash[:assignee] = ticket["assignee"]
+      ticket_hash[:created_at] = ticket["created_at"]
+      ticket_hash[:updated_at] = ticket["updated_at"]
+      ticket_hash[:type] = ticket["type"]
 
       @tickets << Ticket.new(ticket_hash)
     end

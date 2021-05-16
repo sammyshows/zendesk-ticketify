@@ -1,16 +1,30 @@
+require 'date'
+
 class TicketsView
   def display_all(tickets)
-    puts "   id   status   subject"
+    puts "All tickets:"
+    puts ""
     tickets.each_with_index do |ticket, index|
-      puts "#{index + 1}. #{ticket.id} #{ticket.status} #{ticket.subject}"
+      puts "#{index + 1}. Date: #{DateTime.parse(ticket.created_at).strftime('%d/%m/%Y')}    Status: #{ticket.status}    Subject: #{ticket.subject}"
     end
   end
 
-  def display_one(ticket)
+  def display_one(ticket, ticket_index)
+    print `clear`
+    puts "Ticket no. #{ticket_index + 1}:"
+    puts ""
     puts "Subject: #{ticket.subject}"
-    puts "ID: #{ticket.id}"
+    puts ""
+    puts "Created at: #{DateTime.parse(ticket.created_at).strftime('%d/%m/%Y at %I:%M:%S %p')}"
+    puts "Last update: #{DateTime.parse(ticket.updated_at).strftime('%d/%m/%Y at %I:%M:%S %p')}"
+    puts ""
+    puts "Type: #{ticket.type}"
+    puts ""
     puts "Status: #{ticket.status}"
+    puts ""
     puts "Priority: #{ticket.priority}"
+    puts ""
+    puts "Description: #{ticket.description}"
   end
 
   def request_ticket_id
